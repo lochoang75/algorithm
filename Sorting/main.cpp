@@ -5,6 +5,9 @@ using namespace std;
 #ifdef USE_INSERTION_SORT
 #include "insertion.h"
 #endif
+#ifdef USE_BUBBLE_SORT
+#include "bubble.h"
+#endif
 
 void print_array(int* arr, int size) 
 {
@@ -20,6 +23,11 @@ int non_decreasing_sort(int *arr, int size)
     cout << "************ USE INSERTION ****************" << endl;
     return non_decreasing_insertion_sort(arr, size);
 #endif /* USE_INSERTION_SORT */
+
+#ifdef USE_BUBBLE_SORT
+    cout << "************ USE BUBBLE ****************" << endl;
+    return non_decreasing_bubble_sort(arr, size);
+#endif /* USE_BUBBLE_SORT */
 }
 
 int non_increasing_sort(int *arr, int size)
@@ -28,6 +36,11 @@ int non_increasing_sort(int *arr, int size)
     cout << "************ USE INSERTION ****************" << endl;
     return non_increasing_insertion_sort(arr, size);
 #endif /* USE_INSERTION_SORT */
+
+#ifdef USE_BUBBLE_SORT
+    cout << "************ USE BUBBLE ****************" << endl;
+    return non_increasing_bubble_sort(arr, size);
+#endif /* USE_BUBBLE_SORT */
 }
 
 void run_all_test()
