@@ -9,6 +9,10 @@ using namespace std;
 #include "bubble.h"
 #endif
 
+#ifdef USE_SELECTION_SORT
+#include "selection.h"
+#endif
+
 void print_array(int* arr, int size) 
 {
     for (int i = 0; i < size; i++) {
@@ -28,6 +32,11 @@ int non_decreasing_sort(int *arr, int size)
     cout << "************ USE BUBBLE ****************" << endl;
     return non_decreasing_bubble_sort(arr, size);
 #endif /* USE_BUBBLE_SORT */
+
+#ifdef USE_SELECTION_SORT
+    cout << "************ USE BUBBLE ****************" << endl;
+    return non_decreasing_selection_sort(arr, size);
+#endif /* USE_SELECTION_SORT */
 }
 
 int non_increasing_sort(int *arr, int size)
@@ -41,6 +50,11 @@ int non_increasing_sort(int *arr, int size)
     cout << "************ USE BUBBLE ****************" << endl;
     return non_increasing_bubble_sort(arr, size);
 #endif /* USE_BUBBLE_SORT */
+
+#ifdef USE_SELECTION_SORT
+    cout << "************ USE BUBBLE ****************" << endl;
+    return non_increasing_selection_sort(arr, size);
+#endif /* USE_SELECTION_SORT */
 }
 
 void run_all_test()
