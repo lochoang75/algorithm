@@ -3,7 +3,7 @@
 template <typename T>
 int non_decreasing_selection_sort(T* head, int size)
 {
-    if (head == NULL) {
+    if (head == NULL || size < 0) {
         return -1;
     }
 
@@ -33,7 +33,7 @@ int non_decreasing_selection_sort(T* head, int size)
 template <typename T>
 int non_increasing_selection_sort(T* head, int size)
 {
-    if (head == NULL) {
+    if (head == NULL || size < 0) {
         return -1;
     }
 

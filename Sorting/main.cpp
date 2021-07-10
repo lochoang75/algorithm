@@ -13,6 +13,10 @@ using namespace std;
 #include "selection.h"
 #endif
 
+#ifdef USE_MERGE_SORT
+#include "merge.h"
+#endif
+
 void print_array(int* arr, int size) 
 {
     for (int i = 0; i < size; i++) {
@@ -37,6 +41,11 @@ int non_decreasing_sort(int *arr, int size)
     cout << "************ USE BUBBLE ****************" << endl;
     return non_decreasing_selection_sort(arr, size);
 #endif /* USE_SELECTION_SORT */
+
+#ifdef USE_MERGE_SORT
+    cout << "************ USE MERGE *****************" << endl;
+    return non_decreasing_merge_sort(arr, size);
+#endif /* USE_MERGE_SORT */
 }
 
 int non_increasing_sort(int *arr, int size)
@@ -55,6 +64,11 @@ int non_increasing_sort(int *arr, int size)
     cout << "************ USE BUBBLE ****************" << endl;
     return non_increasing_selection_sort(arr, size);
 #endif /* USE_SELECTION_SORT */
+
+#ifdef USE_MERGE_SORT
+    cout << "************ USE_MERGE *****************" << endl;
+    return non_increasing_merge_sort(arr, size);
+#endif /* USE_MERGE_SORT */
 }
 
 void run_all_test()
