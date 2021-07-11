@@ -17,6 +17,10 @@ using namespace std;
 #include "merge.h"
 #endif
 
+#ifdef USE_QUICK_SORT
+#include "quick.h"
+#endif
+
 void print_array(int* arr, int size) 
 {
     for (int i = 0; i < size; i++) {
@@ -46,6 +50,11 @@ int non_decreasing_sort(int *arr, int size)
     cout << "************ USE MERGE *****************" << endl;
     return non_decreasing_merge_sort(arr, size);
 #endif /* USE_MERGE_SORT */
+
+#ifdef USE_QUICK_SORT
+    cout << "************ USE QUICK *****************" << endl;
+    return non_decreasing_quick_sort(arr, size);
+#endif /* USE_QUICK_SORT */
 }
 
 int non_increasing_sort(int *arr, int size)
@@ -69,6 +78,11 @@ int non_increasing_sort(int *arr, int size)
     cout << "************ USE_MERGE *****************" << endl;
     return non_increasing_merge_sort(arr, size);
 #endif /* USE_MERGE_SORT */
+
+#ifdef USE_QUICK_SORT
+    cout << "************ USE QUICK *****************" << endl;
+    return non_increasing_quick_sort(arr, size);
+#endif /* USE_QUICK_SORT */
 }
 
 void run_all_test()
@@ -81,6 +95,16 @@ void run_all_test()
     non_decreasing_sort(arr, size);
     cout << "Array after sort: ";
     print_array(arr, size);
+
+    int arr_2[] = {10, 20, 30, 20, 10, 50};
+    size = sizeof(arr_2) / sizeof(int);
+    cout << "TEST 2" << endl;
+    cout << "Array before sort: ";
+    print_array(arr_2, size);
+    non_decreasing_sort(arr_2, size);
+    cout << "Array after sort: ";
+    print_array(arr_2, size);
+
 }
 
 int main(int argc, char * argv[]) {

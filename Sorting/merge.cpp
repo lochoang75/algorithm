@@ -95,12 +95,28 @@ static int* _sort(int *head, int size, compare_result_t (*cmp)(int, int))
 
 int non_decreasing_merge_sort(int *head, int size)
 {
+    if (head == NULL || size < 0) {
+        return -1;
+    }
+
+    if (size == 1) {
+        return 0;
+    }
+
     _sort(head, size, compare_smaller);
     return 0;
 }
 
 int non_increasing_merge_sort(int *head, int size)
 {
+    if (head == NULL || size < 0) {
+        return -1;
+    }
+
+    if (size == 1) {
+        return 0;
+    }
+
     _sort(head, size, compare_bigger);
     return 0;
 }
