@@ -37,7 +37,7 @@ public:
         _stack_array_deallocate();
     }
 
-    virtual bool isFull() {
+    bool isFull() {
         int total_size = Stack<T>::getTotalSize();
         if (this->size == total_size) {
             return true;
@@ -45,14 +45,14 @@ public:
         return false;
     }
 
-    virtual bool isEmpty() {
+    bool isEmpty() {
         if (this->size == 0) {
             return true;
         }
         return false;
     }
 
-    virtual bool push(T data) {
+    bool push(T data) {
         if (this->isFull()) {
             return false;
         }
@@ -62,7 +62,7 @@ public:
         return true;
     }
 
-    virtual bool pop(T *data) {
+    bool pop(T *data) {
         if (this->isEmpty()) {
             return false;
         }
