@@ -21,6 +21,10 @@ using namespace std;
 #include "quick.h"
 #endif
 
+#ifdef USE_COUNTING_SORT
+#include "counting.h"
+#endif
+
 void print_array(int* arr, int size) 
 {
     for (int i = 0; i < size; i++) {
@@ -55,6 +59,11 @@ int non_decreasing_sort(int *arr, int size)
     cout << "************ USE QUICK *****************" << endl;
     return non_decreasing_quick_sort(arr, size);
 #endif /* USE_QUICK_SORT */
+
+#ifdef USE_COUNTING_SORT
+    cout << "************ USE COUNTING *****************" << endl;
+    return non_decreasing_counting_sort(arr, size);
+#endif /* USE_COUNTING_SORT */
 }
 
 int non_increasing_sort(int *arr, int size)
@@ -83,6 +92,11 @@ int non_increasing_sort(int *arr, int size)
     cout << "************ USE QUICK *****************" << endl;
     return non_increasing_quick_sort(arr, size);
 #endif /* USE_QUICK_SORT */
+
+#ifdef USE_COUNTING_SORT
+    cout << "************ USE COUNTING *****************" << endl;
+    return non_increasing_counting_sort(arr, size);
+#endif /* USE_COUNTING_SORT */
 }
 
 void run_all_test()

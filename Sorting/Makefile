@@ -23,6 +23,9 @@ merge_sort: merge.o
 quick_sort: quick.o
 	g++ -DUSE_QUICK_SORT quick.o main.cpp -o quick_sort
 
+counting_sort:
+	g++ -DUSE_COUNTING_SORT main.cpp -o counting_sort
+
 clean:
 	rm -rf insertion_sort
 	rm -rf bubble_sort
@@ -31,3 +34,4 @@ clean:
 	rm -rf merge.o
 	rm -rf quick_sort
 	rm -rf quick.o
+	rm -rf counting_sort
