@@ -35,5 +35,13 @@ int main(int argc, char *argv[]) {
     list->list_traverse(print_list);
     cout << endl;
 
+    cout << "Insert 100 to head" << endl;
+    int insert_value = 100;
+    list->list_insert_head(&insert_value);
+    cout << "List after insert: "<< endl;
+    list->list_traverse(print_list);
+    cout << endl;
+
+
     return 0;
 }
