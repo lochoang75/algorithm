@@ -25,6 +25,10 @@ int main(int argc, char *argv[]) {
         cout << "Found at: "<< index << endl;
     }
 
+    cout << "Get element at 2" << endl;
+    int element = list->list_get_index(2);
+    cout << "Element get: " << element << endl;
+
     cout << "Remove element = 2" << endl;
     list->list_remove(&array[1]);
     cout << "List after remove: "<< endl;

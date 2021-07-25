@@ -211,7 +211,7 @@ T LinkedList<T>:: list_get_index(int index) {
         }
     }
 
-    return temp;
+    return temp->data;
 }
 
 template <class T>
