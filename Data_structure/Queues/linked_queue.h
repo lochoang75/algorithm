@@ -39,6 +39,7 @@ public:
         while(!isEmpty()) {
             pHead->pNext = temp->pNext;
             delete temp;
+            temp = pHead->pNext;
             this->count --;
         }
         delete pHead;
