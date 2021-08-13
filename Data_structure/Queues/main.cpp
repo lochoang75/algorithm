@@ -4,6 +4,10 @@
 #include "array_queue.h"
 #endif
 
+#ifdef USE_LINKED_QUEUE
+#include "linked_queue.h"
+#endif
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -11,6 +15,11 @@ int main(int argc, char *argv[]) {
 #if USE_ARRAY_QUEUE
     ArrayQueue<int> arr_queue = ArrayQueue<int>();
     queue = &arr_queue;
+#endif 
+
+#if USE_LINKED_QUEUE
+    LinkedQueue<int> linked_queue = LinkedQueue<int>();
+    queue = &linked_queue;
 #endif 
 
     int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
