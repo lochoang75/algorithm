@@ -54,22 +54,22 @@ public:
 
     bool push(T data) {
         if (this->isFull()) {
-            return false;
+            return 1; 
         }
 
         this->data[this->size] = data;
         this->size++;
-        return true;
+        return 0;
     }
 
     bool pop(T *data) {
         if (this->isEmpty()) {
-            return false;
+            return 1;
         }
 
         (*data) = this->data[this->size - 1];
         this->size--;
-        return true;
+        return 0;
     }
 };
 #endif /*ARRAY_STACK_H */
